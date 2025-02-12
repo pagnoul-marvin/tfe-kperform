@@ -15,11 +15,11 @@
 </head>
 <body>
 
-    <h1 class="hidden">KPerforM</h1>
+<h1 class="hidden">KPerforM</h1>
 
-    <header></header>
+<header></header>
 
-    <main>{{$slot}}</main>
+<main>{{$slot}}</main>
 
 </body>
 </html>

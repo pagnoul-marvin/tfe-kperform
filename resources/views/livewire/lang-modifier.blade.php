@@ -1,7 +1,11 @@
 <div>
     @if(str_replace('_', '-', $locale) === 'fr')
-        <p wire:click="changeLang('en')">EN</p>
+        <div wire:click="changeLang('en')">
+            <x-flag-country-us/>
+        </div>
     @else
-        <p wire:click="changeLang('fr')">FR</p>
+        <div wire:click="changeLang('fr')">
+            <x-flag-country-fr/>
+        </div>
     @endif
 </div>
