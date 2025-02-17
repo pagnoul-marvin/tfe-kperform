@@ -1,5 +1,5 @@
 <?php
 
-use App\Livewire\appointment\AppointmentLogin;
+use App\Livewire\Appointment\AppointmentLogin;
 
 Route::get('/appointment/login', AppointmentLogin::class )->name('appointment-login');

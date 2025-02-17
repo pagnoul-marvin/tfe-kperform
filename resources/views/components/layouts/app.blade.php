@@ -17,9 +17,15 @@
 
 <h1 class="hidden">KPerforM</h1>
 
-<header></header>
+<header>
+    <livewire:navigations.main/>
+</header>
 
 <main>{{$slot}}</main>
+
+<footer class="section">
+    <livewire:navigations.footer/>
+</footer>
 
 </body>
 </html>

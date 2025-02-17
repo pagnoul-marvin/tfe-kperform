@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\appointment;
+namespace App\Livewire\Appointment;
 
 use Livewire\Component;
 
