@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Navigations;
 
+use App\Enum\ContactDetails;
 use Livewire\Component;
 
 class Footer extends Component
@@ -31,13 +32,13 @@ class Footer extends Component
             ['name' => __('texts.my_profile'), 'url' => '/profile'],
             ['name' => __('texts.logout'), 'url' => '/logout'],
         ];
-        $this->socials_title = __('texts.our_social_networks');
-        $this->facebook_link = 'https://www.facebook.com/profile.php?id=100067500763943';
+        $this->socials_title = __('texts.my_social_networks');
+        $this->facebook_link = ContactDetails::Facebook->value;
         $this->contact_title = __('texts.contact_info');
-        $this->telephone = '+32(0) 472 553 266';
-        $this->address = 'Cité du Bois Goulet 85, 4801 Stembert';
-        $this->address_link = 'https://www.google.com/maps/place/Cit%C3%A9+du+Bois+Goulet+85,+4801+Verviers/@50.5804305,5.8921135,17z/data=!3m1!4b1!4m6!3m5!1s0x47c08971907db731:0xbc958dfc36d4bcae!8m2!3d50.5804305!4d5.8946884!16s%2Fg%2F11kk4jw9kv?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D';
-        $this->email = 'marine.pagnoul.kine@gmail.com';
+        $this->telephone = ContactDetails::Telephone->value;
+        $this->address = ContactDetails::Address->value;
+        $this->address_link = ContactDetails::AddressGoogleMap->value;
+        $this->email = ContactDetails::Email->value;
         $this->language_title = __('texts.switch_language');
         $this->marvin_portfolio_link = 'https://portfolio.marvinpagnoul.be';
     }

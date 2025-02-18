@@ -30,7 +30,7 @@
 
                 <h2 class="big_title eaves bold">KPerforM</h2>
 
-                <h3 class="primary_title eaves bold">{{__('texts.tagline')}}</h3>
+                <h3 class="tagline eaves bold">{{__('texts.tagline')}}</h3>
 
             </div>
 
