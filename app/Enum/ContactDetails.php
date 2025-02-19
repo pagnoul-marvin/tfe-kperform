@@ -2,8 +2,6 @@
 
 namespace App\Enum;
 
-
-
 enum ContactDetails: string
 {
     case Telephone = "+32(0) 472 553 266";

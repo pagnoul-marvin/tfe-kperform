@@ -1,6 +1,7 @@
 //sass --watch scss/app.scss:css/app.css
 @import "reset";
 @import 'variables';
+@import 'transitions';
 
 .hidden {
     font-size: 0;
@@ -60,7 +61,11 @@
 .section {
     margin-top: $spaceXXL;
 
-    &.basic {
+    &_plus {
+        margin-top: calc($spaceXXL + $spaceXL);
+    }
+
+    &.basic, &_plus.basic {
         flex-direction: column;
         gap: calc($spaceXL + $spaceS + 9.59px);
     }
@@ -132,6 +137,79 @@
     &_links, &_others {
         gap: $spaceM;
     }
+
+    &_others {
+        &_profile, &_notifications {
+            position: relative;
+        }
+
+        &_notifications_modal, &_profile_modal {
+            position: absolute;
+            border: 1px solid $uncolored_grey;
+            box-shadow: 2px 2px 6px $uncolored_black;
+            border-radius: .625em;
+            padding: .3125em;
+            flex-direction: column;
+            z-index: 1;
+            top: calc(100% + 20px);
+        }
+
+        &_notifications_modal {
+            right: 0;
+        }
+
+        &_profile_modal {
+            width: 12.1875em;
+            gap: $spaceS;
+            left: calc((100% / 2) - (12.1875em / 2));
+
+            &_form {
+                width: 100%;
+
+                .main_nav_others_profile_modal_link {
+                    width: 100%;
+                    font-size: 1em;
+
+                    &:hover {
+                        & .main_nav_others_profile_modal_link_icon {
+                            stroke: $orange;
+                            fill: none;
+                        }
+                    }
+                }
+            }
+
+            &_text {
+                padding: .625em;
+            }
+
+            &_link {
+                color: $black;
+                border: none;
+                background: none;
+                border-radius: .625em;
+                transition: .3s ease-in-out;
+                gap: $space;
+                text-decoration: none;
+                width: calc(100% - 20px);
+                justify-content: unset;
+                cursor: pointer;
+
+                &_icon {
+                    transition: .3s ease-in-out;
+                }
+
+                &:hover {
+                    color: $orange;
+                    background-color: $lightOrange-;
+
+                    & .main_nav_others_profile_modal_link_icon {
+                        fill: $orange;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer {
@@ -175,6 +253,22 @@
     justify-content: start;
 }
 
+.img_container {
+    position: relative;
+}
+
+.img_container, .slider_container_images_container {
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: $lightOrange-;
+        bottom: -50px;
+        right: -50px;
+        z-index: -1;
+        border-radius: 0.9375em;
+    }
+}
+
 .slider_container {
     position: relative;
     flex-direction: column;
@@ -189,16 +283,8 @@
             position: relative;
 
             &::before {
-                content: "";
-                position: absolute;
-                background-color: $lightOrange-;
-                border-radius: 15px;
                 width: 503px;
                 height: 324px;
-                bottom: -50px;
-                right: -50px;
-                z-index: -1;
-                transition: all 0.3s ease;
             }
         }
     }
@@ -263,7 +349,7 @@
     }
 }
 
-.section.basic, .footer, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content {
+.section.basic, .section_plus.basic, .footer, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
     align-items: start;
 }
 
@@ -409,4 +495,107 @@
         }
     }
 }
+
+.about_presentation {
+    &_content {
+        justify-content: center;
+        gap: $spaceXL;
+
+        &_img_container {
+            width: 452px;
+            height: 452px;
+
+            &::before {
+                width: 436px;
+                height: 388px;
+                left: -50px;
+                right: unset;
+            }
+
+            &_img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.9375em;
+            }
+        }
+
+        &_texts {
+            flex-direction: column;
+            gap: $spaceXL;
+            width: 445px;
+
+            &_container {
+                flex-direction: column;
+                gap: $spaceS;
+            }
+        }
+    }
+}
+
+.about_why_me {
+    &_content {
+        justify-content: center;
+        gap: $spaceXL;
+
+        &_img_container {
+            width: 452px;
+            height: 452px;
+
+            &:before {
+                width: 436px;
+                height: 388px;
+            }
+
+            &_img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.9375em;
+            }
+        }
+
+        &_text {
+            width: 445px;
+        }
+    }
+}
+
+.about_my_team {
+    &_content {
+        &_team_mates_list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: $spaceS;
+            align-items: stretch;
+
+            &_item {
+                border-radius: .9375em;
+                border: 2px solid $orange;
+                padding: $spaceS;
+                text-align: center;
+                gap: $spaceM;
+                flex-direction: column;
+                justify-content: unset;
+
+                &_profile {
+                    gap: $spaceS;
+                    flex-direction: column;
+
+                    &_name_and_job {
+                        gap: $space;
+                        flex-direction: column;
+
+                        &_name {
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+
+                .link {
+                    gap: $space;
+                }
+            }
+        }
+    }
+}
+
 

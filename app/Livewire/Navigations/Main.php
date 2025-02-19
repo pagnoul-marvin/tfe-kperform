@@ -8,6 +8,9 @@ class Main extends Component
 {
     public $links;
 
+    public $is_profile_modal_open = false;
+    public $is_notifications_modal_open = false;
+
     public function mount(): void
     {
         $this->links = [
@@ -16,5 +19,17 @@ class Main extends Component
             ['name' => __('texts.services'), 'url' => '/services'],
             ['name' => __('texts.contact'), 'url' => '/contact'],
         ];
+    }
+
+    public function toggle_profile_modal(): void
+    {
+        $this->is_profile_modal_open = !$this->is_profile_modal_open;
+        $this->is_notifications_modal_open = false;
+    }
+
+    public function toggle_notifications_modal(): void
+    {
+        $this->is_notifications_modal_open = !$this->is_notifications_modal_open;
+        $this->is_profile_modal_open = false;
     }
 }

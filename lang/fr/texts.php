@@ -65,5 +65,22 @@ return [
     'come_back' => 'Reviennent lorsqu\'ils ont de nouveaux problèmes',
     'high_quality_services_offered' => 'Services de qualité proposés',
     'want_to_try' => 'Envie d\'essayer ? Contactez-moi !',
+    'presentation' => 'Présentation',
+    'who_am_i' => 'Qui suis-je ?',
+    'who_am_i_description' => 'Je suis Marine Pagnoul, kinésithérapeute passionnée et engagée à vous accompagner vers une meilleure santé et des performances optimales. À travers une approche personnalisée, je veille à répondre à vos besoins, que ce soit pour une rééducation, la prévention de blessures ou simplement pour retrouver un bien-être durable.',
+    'my_goal' => 'Mon objectif',
+    'my_goal_description' => 'Mon objectif est de vous offrir un suivi professionnel dans une ambiance à la fois sportive et rassurante. En complément, des massages sont également proposés pour une détente musculaire complète. Je serai ravie de vous accueillir et de vous aider à atteindre vos objectifs santé avec soin et expertise.',
+    'why_me' => 'Pourquoi me choisir ?',
+    'why_me_description' => 'Me choisir, c’est faire le choix d’un accompagnement personnalisé, basé sur une écoute attentive et une expertise professionnelle solide. Passionnée par mon métier, je mets tout en œuvre pour comprendre vos besoins, vous guider vers une récupération optimale et vous aider à atteindre vos objectifs de santé. Mon approche allie rigueur médicale et dynamisme, avec une touche humaine essentielle pour vous sentir en confiance. Que ce soit pour soulager une douleur, prévenir une blessure ou simplement vous sentir mieux dans votre corps, je vous accompagne à chaque étape avec soin, engagement et bienveillance.',
+    'physiotherapist' => 'Kinésithérapeute',
+    'massage_therapist' => 'Masseuse',
+    'marine_career' => 'Marine a plusieurs formations dans sa poche. Après ses études secondaires, elle a débuté en 2010 des études de Kinésithérapie au Barbou à Liège. Après avoir réussi ses études, elle a commencé en 2014, une formation en kinésithérapie sportive à Tournai. Deux ans après, elle a réalisé une formation en thérapie manuelle ostéopathique et sportive à Namur.',
+    'melissa_career' => 'Mélissa est aide familiale et a toujours été passionnée par l’esthétique. Déterminée à suivre sa vocation, elle a décidé de franchir le cap en suivant une formation en massage pour allier bien-être et soin à son métier.',
+    'my_team' => 'Mon équipe',
+    'see_my_profile' => 'Voir mon profil',
+    'admin_space' => 'Espace administrateur',
+    'go_to_my_admin_space' => 'Se rendre sur mon espace administrateur',
+    'you_are_not_logged_in' => 'Vous n\'êtes pas connecté',
+
 ];
 

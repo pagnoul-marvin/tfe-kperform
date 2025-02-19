@@ -1,0 +1,19 @@
+.profile-modal-transition, {
+    transition: opacity 0.3s ease-in-out, transform .3s ease-in-out;
+}
+
+.profile-modal-enter, .profile-modal-leave-active, {
+    opacity: 0;
+}
+
+.profile-modal-enter-active, .profile-modal-leave, {
+    opacity: 1;
+}
+
+.profile-modal-enter, .profile-modal-leave-active {
+    transform: translateY(-10%);
+}
+
+.profile-modal-enter-active, .profile-modal-leave, {
+    transform: translateY(0);
+}
