@@ -29,8 +29,8 @@ class Footer extends Component
             ['name' => __('texts.services'), 'url' => '/services'],
             ['name' => __('texts.contact'), 'url' => '/contact'],
             ['name' => __('texts.make_an_appointment'), 'url' => '/appointment/login'],
-            ['name' => __('texts.my_profile'), 'url' => '/profile'],
-            ['name' => __('texts.logout'), 'url' => '/logout'],
+            ['name' => __('texts.my_profile'), 'url' => route('profile')],
+            ['name' => __('texts.logout'), 'url' => route('logout')],
         ];
         $this->socials_title = __('texts.my_social_networks');
         $this->facebook_link = ContactDetails::Facebook->value;

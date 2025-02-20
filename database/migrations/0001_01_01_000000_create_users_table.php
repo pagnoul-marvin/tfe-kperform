@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('telephone')->unique();
+            $table->string('address');
             $table->longText('school_career')->nullable();
             $table->enum('role', UserRoles::values())->default(UserRoles::Patient->value);
             $table->string('job')->nullable();

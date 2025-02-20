@@ -139,7 +139,7 @@
 
                         @csrf
 
-                        <button class="eaves main_nav_others_profile_modal_link bold flex" type="submit" title="{{__('texts.go_to_my_admin_space')}}">
+                        <button class="eaves main_nav_others_profile_modal_link bold btn flex" type="submit" title="{{__('texts.logout')}}">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <mask id="mask0_61_2036" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
                                     <path d="M0 0H16V16H0V0Z" fill="white"/>

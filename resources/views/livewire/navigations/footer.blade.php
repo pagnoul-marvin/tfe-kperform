@@ -9,13 +9,62 @@
             <ul class="flex footer_content_nav_links">
 
                 @foreach($nav_links as $link)
-                    <li>
-                        <a class="link eaves"
-                           href="{{$link['url']}}"
-                           title="{{__('texts.page_link_title')}} {{str_replace('-', ' ',ucfirst($link['name']))}}"
-                           wire:navigate>{{str_replace('-', ' ',ucfirst($link['name']))}}
-                        </a>
-                    </li>
+                    @if($link['name'] === __('texts.logout'))
+
+                        @auth()
+
+                            <li>
+
+                                <form class="" action="{{$link['url']}}" method="post">
+
+                                    @csrf
+
+                                    <button class="eaves link btn flex" type="submit" title="{{__('texts.logout')}}">
+                                        {{__('texts.logout')}}
+                                    </button>
+
+                                </form>
+
+                            </li>
+
+                        @endauth
+
+                    @elseif($link['url'] === route('profile'))
+
+                        @auth()
+
+                            <li>
+                                <a class="link eaves"
+                                   href="{{$link['url']}}"
+                                   title="{{__('texts.page_link_title')}} {{str_replace('-', ' ',ucfirst($link['name']))}}"
+                                   wire:navigate>{{str_replace('-', ' ',ucfirst($link['name']))}}
+                                </a>
+                            </li>
+
+                        @else
+
+                            <li>
+                                <a class="link eaves"
+                                   href="{{route('appointment-login')}}"
+                                   title="{{__('texts.page_link_title')}} {{__('texts.login')}}"
+                                   wire:navigate>{{__('texts.login')}}
+                                </a>
+                            </li>
+
+                        @endauth
+
+                    @else
+
+                        <li>
+                            <a class="link eaves"
+                               href="{{$link['url']}}"
+                               title="{{__('texts.page_link_title')}} {{str_replace('-', ' ',ucfirst($link['name']))}}"
+                               wire:navigate>{{str_replace('-', ' ',ucfirst($link['name']))}}
+                            </a>
+                        </li>
+
+                    @endif
+
                 @endforeach
 
             </ul>

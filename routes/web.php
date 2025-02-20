@@ -3,7 +3,7 @@
 use App\Livewire\AboutPage\About;
 use App\Livewire\ContactPage\Contact;
 use App\Livewire\HomePage\Home;
-use App\Livewire\LegalMentions;
+use App\Livewire\LegalMentions\LegalMentions;
 use App\Livewire\ServicesPage\Services;
 use Illuminate\Support\Facades\Route;
 

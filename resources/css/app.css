@@ -102,6 +102,10 @@ table {
   transition: 0.3s ease-in-out;
 }
 
+.link {
+  background: none;
+  padding: 0;
+}
 .link::after {
   width: 0;
   bottom: -30%;
@@ -117,9 +121,10 @@ table {
   height: 48px;
 }
 
-.section {
+.section, .space {
   margin-top: 6.25em;
 }
+
 .section_plus {
   margin-top: 9.375em;
 }
@@ -161,6 +166,38 @@ table {
   line-height: 1.25em;
 }
 
+.btn {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.input_label {
+  flex-direction: column;
+  gap: 0.625em;
+  align-items: stretch;
+}
+.input_label_container {
+  position: relative;
+  flex-direction: column;
+  gap: 0.625em;
+}
+.input_label_container_eye {
+  position: absolute;
+  right: 18px;
+  top: calc(50% + 5px);
+}
+
+.input {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  width: calc(100% - 2px - 20px);
+}
+
+.red {
+  color: #E41E1E;
+}
+
 .primary_button, .socials_link, .lang_switcher_flag {
   transition: 0.3s ease-in-out;
 }
@@ -177,9 +214,10 @@ table {
 .primary_button, .link {
   text-decoration: none;
   color: #000000;
+  border: none;
 }
 
-.notifications_icon, .profile_icon, .lang_switcher_flag {
+.notifications_icon, .profile_icon, .lang_switcher_flag, .input_label_container_eye {
   cursor: pointer;
 }
 
@@ -215,13 +253,12 @@ table {
 }
 .main_nav_others_profile_modal_form .main_nav_others_profile_modal_link {
   width: 100%;
-  font-size: 1em;
 }
 .main_nav_others_profile_modal_form .main_nav_others_profile_modal_link:hover .main_nav_others_profile_modal_link_icon {
   stroke: #FF8C00;
   fill: none;
 }
-.main_nav_others_profile_modal_text {
+.main_nav_others_profile_modal_text, .main_nav_others_profile_modal_link {
   padding: 0.625em;
 }
 .main_nav_others_profile_modal_link {
@@ -234,7 +271,6 @@ table {
   text-decoration: none;
   width: calc(100% - 20px);
   justify-content: unset;
-  cursor: pointer;
 }
 .main_nav_others_profile_modal_link_icon {
   transition: 0.3s ease-in-out;
@@ -364,8 +400,96 @@ table {
   font-size: 2em;
 }
 
-.section.basic, .section_plus.basic, .footer, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
+.go_back_link {
+  gap: 0.625em;
+  justify-content: unset;
+  margin-left: 3.125em;
+  display: inline-block;
+}
+
+.section.basic, .section_plus.basic, .legal_mentions_content, .legal_mentions_content_item, .login_form_and_nav, .login_form, .footer, .input_label_container, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
   align-items: start;
+}
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+.login_logo {
+  justify-content: center;
+}
+.login_form_and_nav, .login_form, .login_form_inputs_labels_container {
+  flex-direction: column;
+}
+.login_form_and_nav {
+  padding: 3.125em 0;
+  align-items: center;
+  justify-content: center;
+}
+.login_form_and_nav .go_back_nav {
+  flex: 1;
+  align-self: flex-start;
+}
+.login_form {
+  flex: 2;
+  gap: 1.875em;
+  align-items: stretch;
+  width: 350px;
+  justify-content: unset;
+}
+.login_form_inputs_labels_container {
+  gap: 1.875em;
+  align-items: stretch;
+}
+.login_form_password_forgotten_and_remember_me_container {
+  gap: 0.625em;
+  user-select: none;
+}
+.login_logo {
+  background-color: #FF8C00;
+}
+
+.checkbox {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #000000;
+  position: relative;
+  transition: background 0.3s, border 0.3s;
+  cursor: pointer;
+}
+.checkbox:checked {
+  background: #FF8C00;
+  border-color: #FF8C00;
+}
+.checkbox:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.4em;
+  height: 0.6em;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.legal_mentions {
+  margin-top: 3.125em;
+}
+.legal_mentions_content {
+  padding: 0 12.5em;
+  width: calc(100% - 25em);
+  gap: 3.125em;
+  flex-direction: column;
+}
+.legal_mentions_content_item {
+  gap: 1.25em;
+  flex-direction: column;
 }
 
 .home_presentation {

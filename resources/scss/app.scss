@@ -39,6 +39,8 @@
 }
 
 .link {
+    background: none;
+    padding: 0;
 
     &::after {
         width: 0;
@@ -58,9 +60,11 @@
     height: 48px;
 }
 
-.section {
+.section, .space {
     margin-top: $spaceXXL;
+}
 
+.section {
     &_plus {
         margin-top: calc($spaceXXL + $spaceXL);
     }
@@ -108,6 +112,40 @@
     line-height: $spaceS;
 }
 
+.btn {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.input_label {
+    flex-direction: column;
+    gap: $space;
+    align-items: stretch;
+
+    &_container {
+        position: relative;
+        flex-direction: column;
+        gap: $space;
+
+        &_eye {
+            position: absolute;
+            right: 18px;
+            top: calc(100% / 2 + 5px);
+        }
+    }
+}
+
+.input {
+    border: 1px solid $black;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 2px - 20px);
+}
+
+.red {
+    color: $red;
+}
+
 .primary_button, .socials_link, .lang_switcher_flag {
     transition: .3s ease-in-out;
 
@@ -125,9 +163,10 @@
 .primary_button, .link {
     text-decoration: none;
     color: $black;
+    border: none;
 }
 
-.notifications_icon, .profile_icon, .lang_switcher_flag {
+.notifications_icon, .profile_icon, .lang_switcher_flag, .input_label_container_eye {
     cursor: pointer;
 }
 
@@ -168,7 +207,6 @@
 
                 .main_nav_others_profile_modal_link {
                     width: 100%;
-                    font-size: 1em;
 
                     &:hover {
                         & .main_nav_others_profile_modal_link_icon {
@@ -179,7 +217,7 @@
                 }
             }
 
-            &_text {
+            &_text, &_link {
                 padding: .625em;
             }
 
@@ -193,7 +231,6 @@
                 text-decoration: none;
                 width: calc(100% - 20px);
                 justify-content: unset;
-                cursor: pointer;
 
                 &_icon {
                     transition: .3s ease-in-out;
@@ -349,8 +386,108 @@
     }
 }
 
-.section.basic, .section_plus.basic, .footer, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
+.go_back_link {
+    gap: $space;
+    justify-content: unset;
+    margin-left: $spaceXL;
+    display: inline-block;
+}
+
+.section.basic, .section_plus.basic, .legal_mentions_content, .legal_mentions_content_item, .login_form_and_nav, .login_form, .footer, .input_label_container, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
     align-items: start;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+
+    &_logo {
+        justify-content: center;
+    }
+
+    &_form_and_nav, &_form, &_form_inputs_labels_container {
+        flex-direction: column;
+    }
+
+    &_form_and_nav {
+        padding: $spaceXL 0;
+        align-items: center;
+        justify-content: center;
+
+        .go_back_nav {
+            flex: 1;
+            align-self: flex-start;
+        }
+    }
+
+    &_form {
+        flex: 2;
+        gap: $spaceM;
+        align-items: stretch;
+        width: 350px;
+        justify-content: unset;
+
+        &_inputs_labels_container {
+            gap: $spaceM;
+            align-items: stretch;
+        }
+    }
+
+    &_form_password_forgotten_and_remember_me_container {
+        gap: $space;
+        user-select: none;
+    }
+
+    &_logo {
+        background-color: $orange;
+    }
+}
+
+.checkbox {
+    appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 1px solid $black;
+    position: relative;
+    transition: background 0.3s, border 0.3s;
+    cursor: pointer;
+
+    &:checked {
+        background: $orange;
+        border-color: $orange;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0.4em;
+            height: 0.6em;
+            border: solid $black;
+            border-width: 0 2px 2px 0;
+            transform: translate(-50%, -60%) rotate(45deg);
+        }
+    }
+}
+
+.legal_mentions {
+    margin-top: $spaceXL;
+
+    &_content {
+        padding: 0 calc($spaceXXL * 2);
+        width: calc(100% - calc($spaceXXL * 2) * 2);
+        gap: $spaceXL;
+        flex-direction: column;
+
+        &_item {
+            gap: $spaceS;
+            flex-direction: column;
+        }
+    }
 }
 
 .home_presentation {
