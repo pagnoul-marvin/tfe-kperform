@@ -15,21 +15,21 @@
                     <div class="home_some_useful_info_content_contact_details_content_details_container_item flex">
 
                         <dt class="eaves datalist">{{__('texts.telephone')}}&nbsp;:&nbsp;</dt>
-                        <dd class="datadescription"><a class="eaves link" title="{{__('texts.phone')}}" href="tel:{{$telephone}}">{{$telephone}}</a></dd>
+                        <dd class="datadescription"><a class="eaves link" title="{{__('texts.phone')}}" href="tel:{{$marine->telephone}}">{{$marine->telephone}}</a></dd>
 
                     </div>
 
                     <div class="home_some_useful_info_content_contact_details_content_details_container_item flex">
 
                         <dt class="eaves datalist">{{__('texts.address')}}&nbsp;:&nbsp;</dt>
-                        <dd class="datadescription"><a class="eaves link" title="{{__('texts.see_address_on_google_map')}}" hreflang="fr" href="{{$address_google_map}}">{{$address}}</a></dd>
+                        <dd class="datadescription"><a class="eaves link" title="{{__('texts.see_address_on_google_map')}}" hreflang="fr" href="{{$address_google_map}}">{{$marine->address}}</a></dd>
 
                     </div>
 
                     <div class="home_some_useful_info_content_contact_details_content_details_container_item flex">
 
                         <dt class="eaves datalist">{{__('texts.mail')}}&nbsp;:&nbsp;</dt>
-                        <dd class="datadescription"><a class="eaves link" title="{{__('texts.send_mail')}}" href="mailto:{{$email}}">{{$email}}</a></dd>
+                        <dd class="datadescription"><a class="eaves link" title="{{__('texts.send_mail')}}" href="mailto:{{$marine->email}}">{{$marine->email}}</a></dd>
 
                     </div>
 

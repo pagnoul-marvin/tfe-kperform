@@ -51,4 +51,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public static function getMarineInformation(): User
+    {
+        return self::where('email', '=', 'marine.pagnoul.kine@gmail.com')->first();
+    }
 }

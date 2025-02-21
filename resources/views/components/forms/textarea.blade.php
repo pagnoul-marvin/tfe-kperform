@@ -1,4 +1,4 @@
-@props(['label', 'id', 'type', 'placeholder', 'required'])
+@props(['label', 'id', 'placeholder', 'required', 'rows'])
 
 <div class="input_label flex">
 
@@ -10,7 +10,7 @@
             @endif
         </label>
 
-        <input class="input eaves" type="{{$type}}" id="{{$id}}" name="{{$id}}" placeholder="{{$placeholder}}" @if($required) required @endif>
+        <textarea class="input eaves" id="{{$id}}" name="{{$id}}" placeholder="{{$placeholder}}" rows="{{$rows}}"></textarea>
 
     </div>
 

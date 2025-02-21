@@ -87,11 +87,11 @@
 
             <h2 class="eaves bold secondary_title">{{$contact_title}}</h2>
 
-            <a class="link eaves" href="tel:{{$telephone}}" title="{{__('texts.phone')}}">{{$telephone}}</a>
+            <a class="link eaves" href="tel:{{$marine->telephone}}" title="{{__('texts.phone')}}">{{$marine->telephone}}</a>
 
-            <a class="link eaves" href="mailto:{{$email}}" title="{{__('texts.send_mail')}}">{{$email}}</a>
+            <a class="link eaves" href="mailto:{{$marine->email}}" title="{{__('texts.send_mail')}}">{{$marine->email}}</a>
 
-            <a class="link eaves" href="{{$address_link}}" hreflang="fr" title="{{__('texts.see_address_on_google_map')}}">{{$address}}</a>
+            <a class="link eaves" href="{{$address_link}}" hreflang="fr" title="{{__('texts.see_address_on_google_map')}}">{{$marine->address}}</a>
 
         </div>
 

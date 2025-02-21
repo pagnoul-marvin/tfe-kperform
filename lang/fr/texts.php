@@ -101,5 +101,17 @@ return [
     'modification_of_legal_mentions_description' => 'Nous nous réservons le droit de modifier ces mentions légales à tout moment. Les modifications seront publiées sur cette page, et la date de la dernière mise à jour sera indiquée en haut de la page.',
     'date_lm' => '10 février 2025',
     'name' => 'Nom',
+    'warning' => 'Attention !',
+    'login_warning' => 'Pour pouvoir se connecter, vous devez faire partie de la team KperforM. Si vous n’avez pas encore accès, veuillez contacter Marine.',
+    'contact_marine' => 'Contacter Marine',
+    'firstname' => 'Prénom',
+    'lastname' => 'Nom',
+    'message' => 'Message',
+    'message_placeholder' => 'Je souhaite vous contacter car...',
+    'send' => 'Envoyer',
+    'contact_information' => 'Contactez-moi pour rejoindre la team KPerforM ! Nous organiserons un premier rendez-vous, après quoi vous intégrerez l’équipe et aurez accès à la plateforme de prise de rendez-vous. Vous pouvez également me contacter via les informations ci-dessous :',
+    'contact_form_success' => 'Votre message a été envoyé avec succès ! Une réponse vous sera envoyée dans les plus bref délais.',
+    'fields_with' => 'Les champs avec une',
+    'mandatory' => 'sont obligatoires',
 ];
 

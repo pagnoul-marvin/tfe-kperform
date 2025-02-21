@@ -8,7 +8,7 @@
 
         </label>
 
-        <input class="input eaves" type="{{$type}}" name="password" id="password">
+        <input class="input eaves" type="{{$type}}" name="password" id="password" required>
 
         @if(!$visible)
 

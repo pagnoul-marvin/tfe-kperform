@@ -3,6 +3,7 @@
 namespace App\Livewire\Navigations;
 
 use App\Enum\ContactDetails;
+use App\Models\User;
 use Livewire\Component;
 
 class Footer extends Component
@@ -13,12 +14,11 @@ class Footer extends Component
     public $facebook_link;
 
     public $contact_title;
-    public $telephone;
-    public $address;
     public $address_link;
-    public $email;
     public $language_title;
     public $marvin_portfolio_link;
+
+    public $marine;
 
     public function mount(): void
     {
@@ -35,11 +35,9 @@ class Footer extends Component
         $this->socials_title = __('texts.my_social_networks');
         $this->facebook_link = ContactDetails::Facebook->value;
         $this->contact_title = __('texts.contact_info');
-        $this->telephone = ContactDetails::Telephone->value;
-        $this->address = ContactDetails::Address->value;
         $this->address_link = ContactDetails::AddressGoogleMap->value;
-        $this->email = ContactDetails::Email->value;
         $this->language_title = __('texts.switch_language');
         $this->marvin_portfolio_link = 'https://portfolio.marvinpagnoul.be';
+        $this->marine = User::getMarineInformation();
     }
 }

@@ -1,12 +1,12 @@
-.profile-modal-transition, {
-    transition: opacity 0.3s ease-in-out, transform .3s ease-in-out;
+.profile-modal-transition, .success-message-transition {
+    transition: transform 0.3s ease-out, opacity 0.3s;
 }
 
-.profile-modal-enter, .profile-modal-leave-active, {
+.profile-modal-enter, .profile-modal-leave-active, .success-message-enter, .success-message-leave-active {
     opacity: 0;
 }
 
-.profile-modal-enter-active, .profile-modal-leave, {
+.profile-modal-enter-active, .profile-modal-leave, .success-message-enter-active, .success-message-leave {
     opacity: 1;
 }
 
@@ -16,4 +16,20 @@
 
 .profile-modal-enter-active, .profile-modal-leave, {
     transform: translateY(0);
+}
+
+.success-message-enter {
+    transform: translateX(100%);
+}
+
+.success-message-enter-active {
+    transform: translateX(0);
+}
+
+.success-message-leave {
+    transform: translateX(0);
+}
+
+.success-message-leave-active {
+    transform: translateX(100%);
 }

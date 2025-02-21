@@ -4,11 +4,15 @@
 
     <div class="flex login_form_and_nav">
 
-       <livewire:navigations.go-back title-level="secondary"/>
+        <livewire:navigations.go-back title-level="secondary"/>
 
         <form action="{{route('appointment-login-store')}}" method="POST" class="login_form flex">
 
             @csrf
+
+            <p class="eaves text"><span class="red bold">{{__('texts.warning')}}</span> {{__('texts.login_warning')}}
+                <a href="{{route('contact')}}" title="{{__('texts.page_link_title')}} {{__('texts.contact')}}" class="eaves">{{__('texts.contact_marine')}}</a>
+            </p>
 
             <div class="login_form_inputs_labels_container flex">
 
@@ -28,11 +32,13 @@
 
                 </div>
 
-                <a href="" class="eaves link" title="{{__('texts.reset_password')}}">{{__('texts.password_forgotten')}}</a>
+                <a href="" class="eaves link"
+                   title="{{__('texts.reset_password')}}">{{__('texts.password_forgotten')}}</a>
 
             </div>
 
-            <button type="submit" class="eaves bold primary_button btn login_form_submit_btn" title="{{__('texts.login')}}">{{__('texts.login')}}</button>
+            <button type="submit" class="eaves bold primary_button btn login_form_submit_btn"
+                    title="{{__('texts.login')}}">{{__('texts.login')}}</button>
 
         </form>
 

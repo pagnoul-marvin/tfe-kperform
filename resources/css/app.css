@@ -48,15 +48,15 @@ table {
   border-spacing: 0;
 }
 
-.profile-modal-transition {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+.profile-modal-transition, .success-message-transition {
+  transition: transform 0.3s ease-out, opacity 0.3s;
 }
 
-.profile-modal-enter, .profile-modal-leave-active {
+.profile-modal-enter, .profile-modal-leave-active, .success-message-enter, .success-message-leave-active {
   opacity: 0;
 }
 
-.profile-modal-enter-active, .profile-modal-leave {
+.profile-modal-enter-active, .profile-modal-leave, .success-message-enter-active, .success-message-leave {
   opacity: 1;
 }
 
@@ -66,6 +66,22 @@ table {
 
 .profile-modal-enter-active, .profile-modal-leave {
   transform: translateY(0);
+}
+
+.success-message-enter {
+  transform: translateX(100%);
+}
+
+.success-message-enter-active {
+  transform: translateX(0);
+}
+
+.success-message-leave {
+  transform: translateX(0);
+}
+
+.success-message-leave-active {
+  transform: translateX(100%);
 }
 
 .hidden {
@@ -106,6 +122,9 @@ table {
   background: none;
   padding: 0;
 }
+.link.black_line::after {
+  background-color: #000000;
+}
 .link::after {
   width: 0;
   bottom: -30%;
@@ -123,6 +142,7 @@ table {
 
 .section, .space {
   margin-top: 6.25em;
+  position: relative;
 }
 
 .section_plus {
@@ -168,13 +188,13 @@ table {
 
 .btn {
   font-size: 1em;
-  cursor: pointer;
 }
 
 .input_label {
   flex-direction: column;
   gap: 0.625em;
   align-items: stretch;
+  flex: 1;
 }
 .input_label_container {
   position: relative;
@@ -217,7 +237,7 @@ table {
   border: none;
 }
 
-.notifications_icon, .profile_icon, .lang_switcher_flag, .input_label_container_eye {
+.notifications_icon, .profile_icon, .lang_switcher_flag, .input_label_container_eye, .btn, .checkbox {
   cursor: pointer;
 }
 
@@ -407,7 +427,20 @@ table {
   display: inline-block;
 }
 
-.section.basic, .section_plus.basic, .legal_mentions_content, .legal_mentions_content_item, .login_form_and_nav, .login_form, .footer, .input_label_container, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
+.feedback_message {
+  position: absolute;
+  right: 3.125em;
+  top: -3.125em;
+  padding: 1.25em;
+  color: #000000;
+  width: 300px;
+  border-radius: 0.9375em;
+  background-color: #56e41e;
+  gap: 1.875em;
+  z-index: 2;
+}
+
+.section.basic, .section_plus.basic, .feedback_message, .contact_content_information, .contact_content_information_content, .legal_mentions_content, .legal_mentions_content_item, .login_form_and_nav, .login_form, .footer, .input_label_container, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
   align-items: start;
 }
 
@@ -434,7 +467,7 @@ table {
   align-self: flex-start;
 }
 .login_form {
-  flex: 2;
+  flex: 3;
   gap: 1.875em;
   align-items: stretch;
   width: 350px;
@@ -459,7 +492,6 @@ table {
   border: 1px solid #000000;
   position: relative;
   transition: background 0.3s, border 0.3s;
-  cursor: pointer;
 }
 .checkbox:checked {
   background: #FF8C00;
@@ -482,8 +514,8 @@ table {
   margin-top: 3.125em;
 }
 .legal_mentions_content {
-  padding: 0 12.5em;
-  width: calc(100% - 25em);
+  padding: 0 25em;
+  width: calc(100% - 50em);
   gap: 3.125em;
   flex-direction: column;
 }
@@ -683,6 +715,40 @@ table {
 }
 .about_my_team_content_team_mates_list_item .link {
   gap: 0.625em;
+}
+
+.contact_content {
+  gap: 6.25em;
+  padding: 0 6.25em;
+  width: calc(100% - 12.5em);
+}
+.contact_content_information, .contact_content_form {
+  flex-direction: column;
+  gap: 1.875em;
+  flex: 1;
+}
+.contact_content_information {
+  background-color: #FF8C00;
+  padding: 3.125em;
+  border-radius: 15px;
+}
+.contact_content_information_content {
+  gap: 1.25em;
+  flex-direction: column;
+}
+.contact_content_information_content_list_item:first-of-type {
+  margin-bottom: 0.625em;
+}
+.contact_content_form {
+  align-items: stretch;
+}
+.contact_content_form_alert {
+  padding-bottom: 1.875em;
+  border-bottom: 1px solid #000000;
+}
+.contact_content_form_fieldset {
+  gap: 1.875em;
+  align-items: stretch;
 }
 
 /*# sourceMappingURL=app.css.map */

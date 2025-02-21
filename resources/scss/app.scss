@@ -42,6 +42,12 @@
     background: none;
     padding: 0;
 
+    &.black_line {
+        &::after {
+            background-color: $black;
+        }
+    }
+
     &::after {
         width: 0;
         bottom: -30%;
@@ -62,6 +68,7 @@
 
 .section, .space {
     margin-top: $spaceXXL;
+    position: relative;
 }
 
 .section {
@@ -114,13 +121,13 @@
 
 .btn {
     font-size: 1em;
-    cursor: pointer;
 }
 
 .input_label {
     flex-direction: column;
     gap: $space;
     align-items: stretch;
+    flex: 1;
 
     &_container {
         position: relative;
@@ -166,7 +173,7 @@
     border: none;
 }
 
-.notifications_icon, .profile_icon, .lang_switcher_flag, .input_label_container_eye {
+.notifications_icon, .profile_icon, .lang_switcher_flag, .input_label_container_eye, .btn, .checkbox {
     cursor: pointer;
 }
 
@@ -393,7 +400,20 @@
     display: inline-block;
 }
 
-.section.basic, .section_plus.basic, .legal_mentions_content, .legal_mentions_content_item, .login_form_and_nav, .login_form, .footer, .input_label_container, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
+.feedback_message {
+    position: absolute;
+    right: $spaceXL;
+    top: -$spaceXL;
+    padding: $spaceS;
+    color: $black;
+    width: 300px;
+    border-radius: .9375em;
+    background-color: $green;
+    gap: $spaceM;
+    z-index: 2;
+}
+
+.section.basic, .section_plus.basic, .feedback_message, .contact_content_information, .contact_content_information_content, .legal_mentions_content, .legal_mentions_content_item, .login_form_and_nav, .login_form, .footer, .input_label_container, .footer_content, .footer_content_nav, .footer_content_contact_info, .footer_content_languages, .footer_content_socials, .footer_content_nav_links, .footer_legal_mentions_content, .home_presentation_content, .home_presentation_content_texts, .home_presentation_content_texts_title, .home_some_useful_info_content, .home_some_useful_info_content_contact_details, .home_some_useful_info_content_socials, .home_some_useful_info_content_timetable, .home_some_useful_info_content_contact_details_content, .home_some_useful_info_content_contact_details_content_contact_container, .home_some_useful_info_content_contact_details_content_details_container, .home_some_useful_info_content_contact_details_content_details_container_item, .home_some_useful_info_content_timetable_list, .home_be_part_of_the_kperform_team_content_explanations_item, .home_some_statistics_content, .about_presentation_content_texts_container, .main_nav_others_profile_modal {
     align-items: start;
 }
 
@@ -424,7 +444,7 @@
     }
 
     &_form {
-        flex: 2;
+        flex: 3;
         gap: $spaceM;
         align-items: stretch;
         width: 350px;
@@ -453,7 +473,6 @@
     border: 1px solid $black;
     position: relative;
     transition: background 0.3s, border 0.3s;
-    cursor: pointer;
 
     &:checked {
         background: $orange;
@@ -478,8 +497,8 @@
     margin-top: $spaceXL;
 
     &_content {
-        padding: 0 calc($spaceXXL * 2);
-        width: calc(100% - calc($spaceXXL * 2) * 2);
+        padding: 0 calc($spaceXXL * 4);
+        width: calc(100% - calc($spaceXXL * 4) * 2);
         gap: $spaceXL;
         flex-direction: column;
 
@@ -730,6 +749,53 @@
                 .link {
                     gap: $space;
                 }
+            }
+        }
+    }
+}
+
+.contact {
+    &_content {
+        gap: $spaceXXL;
+        padding: 0 $spaceXXL;
+        width: calc(100% - $spaceXXL * 2);
+
+        &_information, &_form {
+            flex-direction: column;
+            gap: $spaceM;
+            flex: 1;
+        }
+
+        &_information {
+            background-color: $orange;
+            padding: $spaceXL;
+            border-radius: 15px;
+
+            &_content {
+                gap: $spaceS;
+                flex-direction: column;
+
+                &_list {
+                    &_item {
+                        &:first-of-type {
+                            margin-bottom: $space;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_form {
+            align-items: stretch;
+
+            &_alert {
+                padding-bottom: $spaceM;
+                border-bottom: 1px solid $black;
+            }
+
+            &_fieldset {
+                gap: $spaceM;
+                align-items: stretch;
             }
         }
     }
